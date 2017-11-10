@@ -1,0 +1,36 @@
+{
+  "name": "sqlite3example",
+  "description": "Example projeto to show how use We.js with sqlite",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./app.js",
+  "scripts": {
+    "dev": "node app.js --dev",
+    "verbose": "node app.js --prod",
+    "prod": "node app.js --prod",
+    "start": "node app.js",
+    "test": "NODE_ENV=test LOG_LV=info ./node_modules/.bin/mocha test/bootstrap.js test/**/*.test.js",
+    "coverage": "NODE_ENV=test LOG_LV=info node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -u exports -R spec test/bootstrap.js test/**/*.test.js"
+  },
+  "dependencies": {
+    "async": "^2.5.0",
+    "lodash": "^4.17.4",
+    "sqlite3": "^3.1.13",
+    "we-core": "^1.12.13",
+    "we-plugin-user": "^1.1.6"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "rimraf": "^2.6.2",
+    "sinon": "^4.0.2",
+    "supertest": "^3.0.0",
+    "we-test-tools": "^0.3.19"
+  },
+  "wejs": {
+    "plugins": {
+      "we-plugin-user": true
+    },
+    "devPlugins": {}
+  }
+}
